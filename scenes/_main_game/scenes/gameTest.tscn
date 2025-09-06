@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://bw7lwqdkw30fo"]
+
+[ext_resource type="Script" uid="uid://caqfkvywitlhv" path="res://scenes/_main_game/scripts/player.gd" id="1_qf61d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xsgrm"]
+size = Vector2(1341, 120)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qf61d"]
+
+[node name="GameTest" type="Node2D"]
+
+[node name="Level" type="StaticBody2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Level"]
+offset_left = -14.0
+offset_top = 677.0
+offset_right = 1294.0
+offset_bottom = 745.0
+color = Color(0.101339, 0.439666, 9.62615e-07, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level"]
+position = Vector2(631.5, 737)
+shape = SubResource("RectangleShape2D_xsgrm")
+
+[node name="PlayerBody" type="CharacterBody2D" parent="."]
+position = Vector2(162, 304)
+script = ExtResource("1_qf61d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerBody"]
+shape = SubResource("RectangleShape2D_qf61d")
+
+[node name="ColorRect" type="ColorRect" parent="PlayerBody"]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+color = Color(0.137255, 1, 1, 1)
+metadata/_edit_use_anchors_ = true
